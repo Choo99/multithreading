@@ -8,6 +8,10 @@ public class TextSelector implements Runnable{
 
 	private String sentence[] = { "it","is","recommended","to","use","Calendar","class"};
 	
+	/**
+	 * This method rearrange sequence of sentence
+	 * Thread: word1
+	 */
 	private void rearrangeSentence() {
 		Random random = new Random();
 		Set<Integer>set = new LinkedHashSet<Integer>();
@@ -19,6 +23,7 @@ public class TextSelector implements Runnable{
 		
 		Object newArrangement[] = set.toArray();
 		
+		//set the new sentence
 		String newSentence = "";
 		for(int counter = 0; counter < sentence.length; counter++) {
 			newSentence += sentence[(int)newArrangement[counter]] + " ";
@@ -26,6 +31,10 @@ public class TextSelector implements Runnable{
 		System.out.println(newSentence);
 	}
 	
+	/**
+	 * extract characters from text
+	 * Thread: word1
+	 */
 	private void extractString() {
 		String text = "i am a boy";
 		for(int counter = 0; counter < 10; counter++) {
